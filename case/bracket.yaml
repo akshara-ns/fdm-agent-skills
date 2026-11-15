@@ -1,0 +1,19 @@
+name: bracket
+height: 8
+layer_h: 0.25
+geometry:
+  - add: {rect: {size: [60, 30]}}
+  - cut: {circle: {center: [-20, 0], r: 2.5}}
+  - cut: {circle: {center: [20, 0],  r: 2.5}}
+min_wall_mm: 3.0
+material_volume_mm3: [11500, 16500]
+holes:
+  - {center: [-20, 0], diameter: [4.0, 6.5], tol_center: 1.0}
+  - {center: [20, 0],  diameter: [4.0, 6.5], tol_center: 1.0}
+description: A flat mounting plate bolted at its two holes; one end carries a load.
+material: PLA
+loads:
+  - name: 100 N out-of-plane at one bolt, other bolt fixed
+    supports: [{box: [17, 23, -4, 4, 0, 8]}]
+    loads: [{box: [-23, -17, -4, 4, 0, 8], force_N: 100, direction: [0, 0, 1]}]
+    require: {safety_factor: 1.5}

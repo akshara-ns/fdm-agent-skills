@@ -1,0 +1,28 @@
+# pytest run of the calibration tests in the team repository
+# branch calibration-capture-fixes @ 0d4df0d, 2026-11-15 16:31 EST, Python 3.12 (arm64) via uv
+
+tests/test_calib_board.py::test_detector_indexes_a_grazing_board_consistently PASSED [  4%]
+tests/test_calib_board.py::test_flat_only_fallback_recovers_the_camera_and_checks_z PASSED [  8%]
+tests/test_calib_board.py::test_a_wrong_bed_z_is_caught PASSED           [ 12%]
+tests/test_calib_board.py::test_tilted_frames_are_preferred_and_fit_the_lens PASSED [ 16%]
+tests/test_calib_board.py::test_one_flat_frame_without_tilted_frames_is_refused PASSED [ 20%]
+tests/test_calib_board.py::test_markers_off_the_grid_are_refused PASSED  [ 25%]
+tests/test_calib_board.py::test_cli_fits_from_a_shots_folder PASSED      [ 29%]
+tests/test_calib_board.py::test_the_same_corner_clicked_twice_is_refused PASSED [ 33%]
+tests/test_calib_board.py::test_frames_of_different_sizes_are_refused PASSED [ 37%]
+tests/test_calib_board.py::test_parse_z_reads_what_people_type PASSED    [ 41%]
+tests/test_calib_board.py::test_capture_asks_again_on_a_typo_and_waits_for_a_fresh_frame PASSED [ 45%]
+tests/test_calib_board.py::test_capture_keeps_the_shots_after_ctrl_c_and_continues PASSED [ 50%]
+tests/test_calib_board.py::test_a_bad_markers_file_gives_a_clear_message PASSED [ 54%]
+tests/test_moving_bed.py::test_layer_top_is_read_at_the_nozzle_plane_whatever_the_layer[0.2] PASSED [ 58%]
+tests/test_moving_bed.py::test_layer_top_is_read_at_the_nozzle_plane_whatever_the_layer[6.0] PASSED [ 62%]
+tests/test_moving_bed.py::test_layer_top_is_read_at_the_nozzle_plane_whatever_the_layer[12.0] PASSED [ 66%]
+tests/test_moving_bed.py::test_a_bed_that_has_already_dropped_further_lowers_the_plane PASSED [ 70%]
+tests/test_moving_bed.py::test_printer_reports_the_bed_drop_when_a_frame_is_grabbed PASSED [ 75%]
+tests/test_moving_bed.py::test_calibration_z_is_saved_and_old_files_keep_the_fixed_bed_model PASSED [ 79%]
+tests/test_moving_bed.py::test_watch_and_agent_refuse_a_calibration_without_bed_z PASSED [ 83%]
+tests/test_moving_bed.py::test_pose_reports_the_camera_height_and_flags_a_wrong_calib_z PASSED [ 87%]
+tests/test_moving_bed.py::test_grazing_view_fit_finds_the_physical_pose PASSED [ 91%]
+tests/test_moving_bed.py::test_measured_height_breaks_a_tie_between_poses PASSED [ 95%]
+tests/test_moving_bed.py::test_calibrate_bed_needs_the_bed_z PASSED      [100%]
+======================= 24 passed, 2 warnings in 51.52s ========================

@@ -1,0 +1,214 @@
+{
+  "tools_listed": [
+    "estimate_print_job",
+    "check_cantilever",
+    "check_container",
+    "compare_failure_costs",
+    "plan_unattended_print",
+    "check_deviated_part"
+  ],
+  "request": {
+    "tool": "check_deviated_part",
+    "arguments": {
+      "features": [
+        {
+          "name": "left (load) hole diameter",
+          "role": "fit",
+          "nominal_mm": 5.25,
+          "measured_mm": 4.86,
+          "tolerance_mm": 1.25
+        },
+        {
+          "name": "right (clamped) hole diameter",
+          "role": "fit",
+          "nominal_mm": 5.25,
+          "measured_mm": 5.04,
+          "tolerance_mm": 1.25
+        },
+        {
+          "name": "hole spacing",
+          "role": "fit",
+          "nominal_mm": 40.0,
+          "measured_mm": 40.25,
+          "tolerance_mm": 1.0
+        }
+      ],
+      "beam": {
+        "material": "PLA",
+        "length_mm": 37,
+        "width_mm": 30.04,
+        "nominal_thickness_mm": 8.0,
+        "measured_thickness_mm": 7.58,
+        "load_N": 100,
+        "orientation": "flat",
+        "target_safety_factor": 1.5
+      },
+      "repaired_in_load_path": true,
+      "reprint_time_h": 0.8,
+      "reprint_filament_g": 13.2
+    }
+  },
+  "is_error": false,
+  "structured": {
+    "tool": "check_deviated_part",
+    "verdict": "CAUTION",
+    "decision": "TEST_BEFORE_USE",
+    "summary": "Decision: TEST_BEFORE_USE, because layers were changed in the load path, so a calculation alone cannot vouch for its strength. 3 feature(s) checked, 0 functional feature(s) out of tolerance; arm safety factor 3.03 as printed.",
+    "results": {
+      "beam_safety_factor_design": {
+        "label": "Arm safety factor, design thickness",
+        "value": 3.38,
+        "unit": "-"
+      },
+      "beam_safety_factor_as_printed": {
+        "label": "Arm safety factor, as-printed thickness",
+        "value": 3.03,
+        "unit": "-"
+      },
+      "beam_strength_retained_pct": {
+        "label": "Bending strength retained (∝ thickness²)",
+        "value": 90.0,
+        "unit": "%"
+      },
+      "beam_breaking_load_as_printed_N": {
+        "label": "Estimated breaking load, as printed",
+        "value": 303.2,
+        "unit": "N"
+      },
+      "beam_tip_deflection_as_printed_mm": {
+        "label": "Tip deflection, as printed",
+        "value": 0.58,
+        "unit": "mm"
+      },
+      "reprint_cost_usd": {
+        "label": "Cost of a reprint (filament + machine time)",
+        "value": 0.7,
+        "unit": "$"
+      },
+      "reprint_time_h": {
+        "label": "Printer time for a reprint",
+        "value": 0.8,
+        "unit": "h"
+      },
+      "features_checked": {
+        "label": "Features checked",
+        "value": 3.0,
+        "unit": "-"
+      },
+      "features_out_of_tolerance": {
+        "label": "Fit/load-bearing features out of tolerance",
+        "value": 0.0,
+        "unit": "-"
+      },
+      "worst_functional_tolerance_used_pct": {
+        "label": "Tolerance used by the tightest functional feature (left (load) hole diameter)",
+        "value": 31.0,
+        "unit": "%"
+      }
+    },
+    "checks": [
+      {
+        "name": "Dimensions within designer tolerances",
+        "status": "OK",
+        "detail": "all features within tolerance."
+      },
+      {
+        "name": "Load-bearing arm, as printed",
+        "status": "OK",
+        "detail": "Safety factor 3.03 as printed vs 3.38 as designed (target 1.5)."
+      },
+      {
+        "name": "Repair in the load path",
+        "status": "CAUTION",
+        "detail": "Layers were changed or re-started where load passes; the bond there is unknown, so the calculated safety factor is not enough on its own."
+      }
+    ],
+    "features": [
+      {
+        "name": "left (load) hole diameter",
+        "role": "fit",
+        "nominal_mm": 5.25,
+        "measured_mm": 4.86,
+        "deviation_mm": -0.39,
+        "tolerance_mm": 1.25,
+        "tolerance_used_pct": 31.0,
+        "status": "OK"
+      },
+      {
+        "name": "right (clamped) hole diameter",
+        "role": "fit",
+        "nominal_mm": 5.25,
+        "measured_mm": 5.04,
+        "deviation_mm": -0.21,
+        "tolerance_mm": 1.25,
+        "tolerance_used_pct": 17.0,
+        "status": "OK"
+      },
+      {
+        "name": "hole spacing",
+        "role": "fit",
+        "nominal_mm": 40.0,
+        "measured_mm": 40.25,
+        "deviation_mm": 0.25,
+        "tolerance_mm": 1.0,
+        "tolerance_used_pct": 25.0,
+        "status": "OK"
+      }
+    ],
+    "inputs": {
+      "features": [
+        {
+          "name": "left (load) hole diameter",
+          "role": "fit",
+          "nominal_mm": 5.25,
+          "measured_mm": 4.86,
+          "tolerance_mm": 1.25
+        },
+        {
+          "name": "right (clamped) hole diameter",
+          "role": "fit",
+          "nominal_mm": 5.25,
+          "measured_mm": 5.04,
+          "tolerance_mm": 1.25
+        },
+        {
+          "name": "hole spacing",
+          "role": "fit",
+          "nominal_mm": 40.0,
+          "measured_mm": 40.25,
+          "tolerance_mm": 1.0
+        }
+      ],
+      "beam": {
+        "material": "PLA",
+        "length_mm": 37.0,
+        "width_mm": 30.04,
+        "nominal_thickness_mm": 8.0,
+        "measured_thickness_mm": 7.58,
+        "load_N": 100.0,
+        "orientation": "flat",
+        "target_safety_factor": 1.5
+      },
+      "repaired_in_load_path": true,
+      "reprint_time_h": 0.8,
+      "reprint_filament_g": 13.2
+    },
+    "defaults_used": [
+      "beam: interlayer_factor = 0.5",
+      "filament_price_per_kg = 23",
+      "machine_cost_per_h = 0.5"
+    ],
+    "assumptions": [
+      "A feature passes when |measured − nominal| ≤ tolerance_mm; tolerances come from the designer.",
+      "Cosmetic features (shells, outer walls) default to ±1 mm and can only give a CAUTION.",
+      "The arm check reuses check_cantilever with the measured thickness; it assumes a solid section and the same material and layer bonding as the design, which a repaired region may not have.",
+      "The tool judges geometry and calculated strength only, not surface finish, porosity or material behaviour."
+    ],
+    "warnings": [],
+    "human_checks": [
+      "Measure the features yourself (calipers or a test fit); the tool trusts the numbers it is given.",
+      "For TEST_BEFORE_USE, proof-load the part to the target load (or a sacrificial copy) before relying on it.",
+      "Confirm the tolerances with whoever designed the part."
+    ]
+  }
+}
